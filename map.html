@@ -1,0 +1,31 @@
+<html>
+<head>
+    <link rel="stylesheet" 
+          href="http://cdn.leafletjs.com/leaflet-0.6/leaflet.css" /> 
+</head>
+<body style="margin: 0 auto">
+    <div id="map" style="width: 100%; height: 100%"></div>
+ 
+    <script src="http://cdn.leafletjs.com/leaflet-0.6/leaflet.js"></script>
+
+    <script>
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            dragging: true
+        }).setView([-240, 240], 5);
+
+        //var southWest = map.unproject([0, 30*512], map.getMaxZoom());
+        //var northEast = map.unproject([30*512, 0], map.getMaxZoom());
+        //map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+
+        L.tileLayer('master/{z}/{x}_{y}.png', {
+            minZoom: 1,
+            maxZoom: 6,
+            tileSize: 512,
+            attribution: 'Foogle Maps/Carson Intelligence Agency/CivTransportMap 2013',
+            tms: false,
+            noWrap: true
+        }).addTo(map);
+    </script>
+</body>
+</html>

@@ -65,7 +65,8 @@ def create_map():
 
 def download_tiles():
 	# Download tiles from the civ transport map
-	url = lambda x,y: "http://civcraft.slimecraft.eu/tiles/4/tile_"+str(x)+"_"+str(y)+"_normal.png"
+	masterurl = "http://civcraft.slimecraft.eu/"
+	url = lambda x,y: masterurl+"tiles/4/tile_"+str(x)+"_"+str(y)+"_normal.png"
 
 	for x in range(-30, 30):
 		for y in range(-30, 30):
